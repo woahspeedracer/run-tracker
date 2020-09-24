@@ -6,10 +6,6 @@ html {
     margin: 0 auto;
 }
 
-svg {
-    max-width: 20%;
-}
-
 body {
     padding: 1rem;
     background: #1c262f;
