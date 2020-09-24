@@ -1,5 +1,6 @@
 
 let entries = [];
+let goal = 25;
 const entriesWrapper = document.querySelector('#entries')
 
 function addNewEntry(newEntry) {
@@ -11,7 +12,7 @@ function addNewEntry(newEntry) {
     listItem.appendChild(listValue);
     //adds new list item to end of ul
     entriesWrapper.appendChild(listItem);
-    console.log(listItem, listValue);
+    
 }
 
 function reducer (total, currentValue) {
@@ -34,6 +35,14 @@ function weeklyHigh() {
     document.getElementById('high').innerText = high;
 }
 
+function calcGoal() {
+    const totalValue = entries.reduce(reducer).toFixed(1);
+    const completed = totalValue / (goal / 100);
+    const progressCircle = document.querySelector('#progressCircle');
+    if (completed > 100) completed === 100;
+    progressCircle.style.background = `conic-gradient(#70db70 ${completed}%, #2d3740 ${completed}% 100%)`
+}
+
 function handleSubmit(event) {
     //prevents browser from resetting
     event.preventDefault();
@@ -44,11 +53,13 @@ function handleSubmit(event) {
     document.querySelector('form').reset();
     //update run array
     entries.push(entry);
-    //call addNewEntry function
+    //call format functions
     addNewEntry(entry);
     calcTotal();
     calcAverage();
     weeklyHigh();
+    calcGoal();
+
 }
 
 const form = document.querySelector('form').addEventListener('submit', handleSubmit);

@@ -6,6 +6,10 @@ html {
     margin: 0 auto;
 }
 
+svg {
+    max-width: 20%;
+}
+
 body {
     padding: 1rem;
     background: #1c262f;
@@ -85,4 +89,37 @@ li {
     justify-content: space-between;
     padding: 0 1rem;
     margin: 1rem 0;
+}
+
+.progress {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.progress h3 {
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.progressCircleWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#progressCircle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* background: conic-gradient(#70db70 50%, #2d3740 50%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progressCenter {
+    
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #1c262f;
 }
