@@ -29,6 +29,11 @@ function calcAverage() {
     document.getElementById('average').innerText = average;
 }
 
+function weeklyHigh() {
+    const high = Math.max(...entries);
+    document.getElementById('high').innerText = high;
+}
+
 function handleSubmit(event) {
     //prevents browser from resetting
     event.preventDefault();
@@ -43,6 +48,7 @@ function handleSubmit(event) {
     addNewEntry(entry);
     calcTotal();
     calcAverage();
+    weeklyHigh();
 }
 
 const form = document.querySelector('form').addEventListener('submit', handleSubmit);
